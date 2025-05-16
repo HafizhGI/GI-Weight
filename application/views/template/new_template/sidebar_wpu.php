@@ -4,9 +4,9 @@
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
         <div class="sidebar-brand-icon rotate-n-10">
-            <i class="fas fa-home"></i>
+            <img src="<?= base_url('assets/img/wpg.png'); ?>" style="width: 50px; height: 50px;">
         </div>
-        <div class="sidebar-brand-text mx-3">WEIGHTNET</div>
+        <div class="sidebar-brand-text mx-3" style="font-size: 20px;">GI-WEIGHT</div>
     </a>
 
     <!-- Divider -->
@@ -20,7 +20,7 @@
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
         <a class="nav-link" href="index.html">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
+            <i class="fas fa-fw fa-home"></i>
             <span>Dashboard</span></a>
     </li>
 
@@ -49,14 +49,9 @@
         </a>
         <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Login Screens:</h6>
-                <a class="collapse-item" href="login.html">Login</a>
-                <a class="collapse-item" href="register.html">Register</a>
-                <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
-                <div class="collapse-divider"></div>
-                <h6 class="collapse-header">Other Pages:</h6>
-                <a class="collapse-item" href="404.html">404 Page</a>
-                <a class="collapse-item" href="blank.html">Blank Page</a>
+                <h6 class="collapse-header">Report Menu:</h6>
+                <a class="collapse-item" href="login.html">Daily Report</a>
+                <a class="collapse-item" href="register.html">Monthly Report</a>
             </div>
         </div>
     </li>
