@@ -28,7 +28,7 @@
 
     <!-- Nav Item - Master Sample -->
     <li class="nav-item">
-        <a class="nav-link" href="charts.html">
+        <a class="nav-link" href="<?= base_url('Master_sample/index') ?>">
             <i class="fas fa-fw fa-boxes"></i> <!-- Ganti icon -->
             <span>Master Sample</span>
         </a>
