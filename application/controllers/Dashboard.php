@@ -12,19 +12,15 @@ class Dashboard extends CI_Controller
     }
     public function index_dashboard()
     {
-        // Ambil data penimbangan dan pemesanan (contoh pakai jumlah per bulan)
-        // $this->load->model('Dashboard_model');
-        // $chartData = $this->Dashboard_model->getChartData();
         $data['title'] = 'Dashboard';
         $data['user'] = $this->db->get_where('user', ['name' => $this->session->userdata('name')])->row_array();
 
-
-        // $data['chartData'] = json_encode($chartData); // Kirim ke view
         $this->load->view('template/new_template/header_wpu');
         $this->load->view('template/new_template/sidebar_wpu', $data);
         $this->load->view('user/dashboard', $data);
         $this->load->view('template/new_template/footer_wpu');
     }
+
     public function getChartData()
     {
         $query = $this->db->query("
