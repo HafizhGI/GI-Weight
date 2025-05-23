@@ -8,6 +8,8 @@ class Master_sample extends CI_Controller
         parent::__construct();
         $this->load->database();
         $this->load->model('Master_sample_model');
+        $this->load->model('Sample_model');
+        $this->load->model('Solid_model');
         $this->sess_id = $this->session->userdata('name');
     }
 
@@ -45,19 +47,47 @@ class Master_sample extends CI_Controller
         redirect('Master_sample/index');
     }
 
+    public function get_size_by_orc()
+    {
+        $orc = $this->input->post('orc');
+        $style = $this->input->post('style');
+        $colour = $this->input->post('color');
+
+        $result = $this->Master_sample_model->get_size_by_osc($orc, $style, $colour);
+
+        echo json_encode(['size' => $result]);
+    }
+
+
+    public function get_sizes()
+    {
+        $orc = $this->input->post('orc');
+        $style = $this->input->post('style');
+        $colour = $this->input->post('color');
+
+        $result = $this->Master_sample_model->get_size_by_osc($orc, $style, $colour);
+        echo json_encode(['size' => $result]);
+    }
+
+
     public function edit()
     {
-        $id = $this->input->get('id_sample');
+        $id_sample = $this->input->get('id_sample');
+        $data['sample'] = $this->Sample_model->get_by_id($id_sample);
+
+        if (!$data['sample']) {
+            show_404(); // Jika data tidak ditemukan
+        }
+
         $data['title'] = 'Edit Sample';
         $data['user'] = $this->db->get_where('user', ['name' => $this->session->userdata('name')])->row_array();
-
-        $data['sample'] = $this->Master_sample_model->get_by_id($id);
 
         $this->load->view('template/new_template/header_wpu');
         $this->load->view('template/new_template/sidebar_wpu', $data);
         $this->load->view('user/edit_sample', $data);
         $this->load->view('template/new_template/footer_wpu');
     }
+
 
     public function update()
     {
