@@ -2,12 +2,14 @@
 <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
     <!-- Sidebar - Brand -->
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-        <div class="sidebar-brand-icon rotate-n-10">
-            <img src="<?= base_url('assets/img/wpg.png'); ?>" style="width: 50px; height: 50px;">
+    <a class="sidebar-brand d-flex align-items-center" href="<?= base_url('Dashboard/index_dashboard'); ?>"
+        style="gap: 10px;">
+        <div class="sidebar-brand-icon">
+            <img src="<?= base_url('assets/img/wpg.png'); ?>" alt="Logo GI-WEIGHT" style="width: 50px; height: 50px;">
         </div>
-        <div class="sidebar-brand-text mx-3" style="font-size: 20px;">GI-WEIGHT</div>
+        <div class="sidebar-brand-text" style="font-size: 22px; font-weight: bold;">GI-WEIGHT</div>
     </a>
+
 
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
@@ -17,7 +19,7 @@
 
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="<?= base_url('Dashboard/index_dashboard'); ?>">
             <i class="fas fa-fw fa-home"></i>
             <span>Dashboard</span>
         </a>
@@ -25,13 +27,8 @@
 
     <!-- Nav Item - Master Sample -->
     <li class="nav-item">
-<<<<<<< Updated upstream
-        <a class="nav-link" href="charts.html">
-            <i class="fas fa-fw fa-boxes"></i> <!-- Ganti icon -->
-=======
         <a class="nav-link" href="<?= base_url('Master_sample/index'); ?>">
             <i class="fas fa-fw fa-boxes"></i>
->>>>>>> Stashed changes
             <span>Master Sample</span>
         </a>
     </li>

@@ -26,8 +26,9 @@ class Auth extends CI_Controller
     }
 
 
-    private function _login()
+    function login()
     {
+
         $name = $this->input->post('name');
         $password = $this->input->post('password');
 
@@ -48,12 +49,12 @@ class Auth extends CI_Controller
             } else {
                 //password salah
                 $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">Wrong Password!</div>');
-                redirect('auth');
+                redirect('Auth/index');
             }
         } else {
             //user tidak ditemukan
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">User not Found!</div>');
-            redirect('auth', 'refresh');
+            redirect('Auth/index', 'refresh');
         }
     }
 
