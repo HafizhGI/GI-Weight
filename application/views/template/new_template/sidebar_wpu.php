@@ -5,9 +5,9 @@
     <a class="sidebar-brand d-flex align-items-center" href="<?= base_url('Dashboard/index_dashboard'); ?>"
         style="gap: 10px;">
         <div class="sidebar-brand-icon">
-            <img src="<?= base_url('assets/img/wpg.png'); ?>" alt="Logo GI-WEIGHT" style="width: 50px; height: 50px;">
+            <img src="<?= base_url('assets/img/logo1.png'); ?>" alt="Logo GI-WEIGHT" style="width: 60px; height: 60px;">
         </div>
-        <div class="sidebar-brand-text" style="font-size: 22px; font-weight: bold;">GI-WEIGHT</div>
+        <div class="sidebar-brand-text" style="font-size: 20px; font-weight: bold;">GI-WEIGHT</div>
     </a>
 
 

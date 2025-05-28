@@ -53,3 +53,4 @@ $route['default_controller'] = 'Auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['master-sample'] = 'Master_sample/index_master_sample';
+$route['transaksi_produk/timbang_produk'] = 'transaksi_produk/timbang_produk';
