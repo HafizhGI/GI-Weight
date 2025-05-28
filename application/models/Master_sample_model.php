@@ -9,14 +9,15 @@ class Master_sample_model extends CI_Model
 
     public function get_all()
     {
-        return $this->db->get('master_sample')->result_array(); // ini buat tampilin data
+        $this->db->order_by('id_sample', 'ASC'); // penting agar urutan konsisten
+        return $this->db->get('master_sample')->result();
     }
+
 
     public function get_by_id($id_sample)
     {
-        return $this->db->get_where('sample', ['id_sample' => $id_sample])->row_array();
+        return $this->db->get_where('master_sample', ['id_sample' => $id_sample])->row_array();
     }
-
 
     public function update($id, $data)
     {
@@ -24,9 +25,19 @@ class Master_sample_model extends CI_Model
         return $this->db->update('master_sample', $data);
     }
 
+    public function delete($id)
+    {
+        $this->db->where('id_sample', $id);
+        return $this->db->delete('master_sample');
+    }
+
+    // Ambil size berdasarkan orc/style/color dari database SOLID
     public function get_size_by_osc($orc, $style, $colour)
     {
-        return $this->db->select('size')
+        // Ambil data dari DB solid_packing_list.tabel solid_packing_list
+        $db_solid = $this->load->database('solid_packing_list', TRUE);
+
+        return $db_solid->select('size')
             ->from('solid_packing_list')
             ->where('orc', $orc)
             ->where('style', $style)
@@ -36,9 +47,17 @@ class Master_sample_model extends CI_Model
             ->result_array();
     }
 
-    public function delete($id)
+    public function get_detail_by_key($orc, $style, $size)
     {
-        $this->db->where('id_sample', $id);
-        return $this->db->delete('master_sample');
+        $db_solid = $this->load->database('solid_packing_list', TRUE);
+
+        return $db_solid->select('color, box_capacity, total_box')
+            ->from('solid_packing_list')
+            ->where('orc', $orc)
+            ->where('style', $style)
+            ->where('size', $size)
+            ->limit(1)
+            ->get()
+            ->row_array();
     }
 }
