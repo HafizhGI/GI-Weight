@@ -7,21 +7,31 @@ class Transaksi_produk extends CI_Controller
     {
         parent::__construct();
         $this->load->database();
+<<<<<<< Updated upstream
         $this->load->model('Data_produk_model');
         $this->load->library('session');
+=======
+        $this->load->model('Data_produk_model'); // Model harus sesuai
+        $this->sess_id = $this->session->userdata('name');
+>>>>>>> Stashed changes
     }
 
     public function index_transpro()
     {
         $data['title'] = 'Data Produk';
         $data['user'] = $this->db->get_where('user', ['name' => $this->session->userdata('name')])->row_array();
+<<<<<<< Updated upstream
         $data['produk'] = $this->Data_produk_model->getAllProduk();
+=======
+        $data['produk'] = $this->Data_produk_model->getAllProduk(); // panggil model dengan huruf besar
+>>>>>>> Stashed changes
 
         $this->load->view('template/new_template/header_wpu');
         $this->load->view('template/new_template/sidebar_wpu', $data);
         $this->load->view('user/transpro', $data);
         $this->load->view('template/new_template/footer_wpu');
     }
+<<<<<<< Updated upstream
 
     public function simpan_produk()
     {
@@ -45,4 +55,6 @@ class Transaksi_produk extends CI_Controller
             echo json_encode(['status' => 'error', 'message' => 'Gagal menyimpan data']);
         }
     }
+=======
+>>>>>>> Stashed changes
 }

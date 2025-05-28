@@ -10,7 +10,6 @@
         <div class="sidebar-brand-text" style="font-size: 20px; font-weight: bold;">GI-WEIGHT</div>
     </a>
 
-
     <!-- Divider -->
     <hr class="sidebar-divider my-0">
 

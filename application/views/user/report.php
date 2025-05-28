@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <!DOCTYPE html>
 <html lang="id">
 
@@ -257,3 +258,5 @@
 </body>
 
 </html>
+=======
+>>>>>>> Stashed changes
