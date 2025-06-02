@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['master-sample'] = 'Master_sample/index_master_sample';
 $route['Master_sample/delete'] = 'Master_sample/delete';
+$route['transaksi_produk/timbang_produk'] = 'transaksi_produk/timbang_produk';

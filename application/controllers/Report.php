@@ -13,26 +13,11 @@ class Report extends CI_Controller
 
     public function index_report()
     {
-        $data['title'] = 'Report Hasil';
-        $data['user'] = $this->db->get_where('user', ['name' => $this->session->userdata('name')])->row_array();
+        $filter = $this->input->get();
+        $data['hasil'] = $this->Report_model->get_filtered_data($filter);
 
-        // Ambil inputan style dan tanggal dari form
-        $style = $this->input->post('style');
-        $tanggal = $this->input->post('tanggal');
-
-        // Untuk pengisian dropdown STYLE (dari database)
+        // Ambil daftar style untuk dropdown
         $data['style_list'] = $this->db->distinct()->select('style')->get('report_hasil')->result();
-
-        // Jika ada inputan, lakukan query
-        if ($this->input->post()) {
-            $this->db->where('style', $style);
-            if (!empty($tanggal)) {
-                $this->db->where('DATE(tanggal_input)', $tanggal); // Pastikan kolom tanggal_input ada
-            }
-            $data['hasil'] = $this->db->get('report_hasil')->result();
-        } else {
-            $data['hasil'] = []; // Kosong saat awal masuk halaman
-        }
 
         // Load view
         $this->load->view('template/new_template/header_wpu');
@@ -41,4 +26,3 @@ class Report extends CI_Controller
         $this->load->view('template/new_template/footer_wpu');
     }
 }
-
