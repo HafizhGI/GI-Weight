@@ -63,9 +63,7 @@
                 </div>
 <<<<<<< Updated upstream
             </div> -->
-            =======
         </div>
-        >>>>>>> Stashed changes
     </div>
     <!-- Modal -->
     <div class="modal fade" id="detailModal" tabindex="-1" role="dialog" aria-labelledby="detailModalLabel"
